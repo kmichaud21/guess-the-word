@@ -8,6 +8,7 @@ const message = document.querySelector(".message");
 const playAgainHide = document.querySelector(".play-again");
 
 const word = "magnolia";
+const guessedLetters = [];
 
 const updateParagraph = function (word) {
     const updatParagraphLetters = [];
@@ -22,7 +23,42 @@ updateParagraph(word);
 
 guess.addEventListener("click", function(e) {
     e.preventDefault();
+    message.innnerText = "";
     const userInput = letterInput.value;
-    console.log(userInput);
+    const goodGuess = inputValidator(guess);
+    if (goodGuess) {
+        makeGuess(guess);
+    }
     letterInput.value = "";
 });
+
+const inputValidator = function (letterInput.value()) {
+    const acceptedLetters = [a-zA-Z]/;
+    if (letterInput.length === 0) {
+        // Is the input empty?
+        message.innerText = "Please enter a letter.";
+    }
+    else if (letterInput.length > 1) {
+        //Did you type more than one word?
+    }
+    else if (!letterInput.match(acceptedLetters) {
+        
+    }
+    else {
+             //We finally got a single letter, omg yay
+             return input;
+  }
+ };
+             
+  const makeGuess = function (guess) {
+        guess = guess.toUpperCase();
+        if (guessedLetters.includes(guess)) {
+            message.innerText = "You already guessed that letter, silly. Try again.";
+        } else {
+            guessedLetters.push(guess);
+            console.log(guessedLetters);
+        }
+        
+    };
+             
+             
